@@ -120,3 +120,24 @@ a:hover { text-decoration: underline; }
   padding: 6px;
   color: var(--muted);
 }
+
+/* --- Final overrides for image sizing --- */
+
+/* Headshot: perfect circle, never stretched, tidy size */
+.headshot {
+  width: 128px !important;
+  height: 128px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  flex-shrink: 0;
+}
+
+/* Sidebar scientific image: small, never too wide */
+.sci-side { max-width: 240px; }
+.sci-side img { width: 100%; height: auto; }
+
+/* If any legacy gallery markup remains, make it small & unobtrusive */
+.gallery { display: inline-block; max-width: 520px; }
+.gallery img { max-width: 240px; height: auto; }
+.gallery figure { display: inline-block; vertical-align: top; margin: 0 8px 8px 0; }
