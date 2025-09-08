@@ -141,3 +141,46 @@ a:hover { text-decoration: underline; }
 .gallery { display: inline-block; max-width: 520px; }
 .gallery img { max-width: 240px; height: auto; }
 .gallery figure { display: inline-block; vertical-align: top; margin: 0 8px 8px 0; }
+
+/* --- Headshot pinned in hero --- */
+.hero { position: relative; }
+.headshot-fixed {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Sidebar scientific images: two stacked thumbs */
+.sci-side { max-width: 240px; }
+.sci-side .thumb {
+  margin: 0 0 10px 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.sci-side .thumb img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+.sci-side .thumb figcaption {
+  font-size: 13px;
+  padding: 6px;
+  color: var(--muted);
+}
+
+/* Responsive: move pinned headshot into flow on small screens */
+@media (max-width: 700px) {
+  .headshot-fixed {
+    position: static;
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+}
