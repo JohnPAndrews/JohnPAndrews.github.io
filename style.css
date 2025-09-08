@@ -221,3 +221,45 @@ a:hover { text-decoration: underline; }
   }
   .hero { padding: 8vh 0 6vh; }
 }
+
+/* === FINAL OVERRIDES (keep at end of file) === */
+
+/* Hero: tighter padding; headshot pinned, circular, never stretched */
+.hero { position: relative; padding: 9vh 0 6vh; }
+.hero .headshot-fixed{
+  position: absolute !important;
+  top: 24px !important;
+  right: 24px !important;
+  width: 140px !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--line) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+}
+
+/* About: reduce space below; compact inner gaps */
+.section { padding: 40px 0; }
+#about.section { padding: 28px 0 24px; }
+.about-with-image { gap: 18px; }
+.about-text p { margin: 0 0 10px; }
+
+/* Sidebar scientific thumbs: small, consistent width */
+.sci-side { max-width: 240px; }
+.sci-side .thumb { margin: 0 0 10px 0; }
+.sci-side .thumb img { width: 100%; height: auto; display:block; }
+
+/* Kill any legacy .headshot rules that might conflict */
+.headshot { all: unset; }  /* neutralize old class if present */
+
+/* Mobile stacking */
+@media (max-width: 700px){
+  .hero { padding: 7vh 0 5vh; }
+  .hero .headshot-fixed{
+    position: static !important;
+    display: block !important;
+    margin: 0 auto 12px auto !important;
+  }
+  .about-with-image { flex-direction: column; }
+  .sci-side { max-width: 100%; }
+}
