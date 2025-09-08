@@ -290,3 +290,35 @@ a:hover { text-decoration: underline; }
   padding: 6px;
   color: var(--muted);
 }
+
+/* === OVERRIDE scientific row sizing === */
+.sci-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;  /* stack nicely on small screens */
+}
+
+.sci-row figure {
+  flex: 0 0 200px;   /* fixed width for thumbnails */
+  max-width: 200px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sci-row img {
+  width: 100%;
+  height: 140px;       /* smaller thumbnail height */
+  object-fit: cover;   /* crop nicely */
+  display: block;
+}
+
+.sci-row figcaption {
+  font-size: 12px;
+  padding: 4px;
+  color: var(--muted);
+}
