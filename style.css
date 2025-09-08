@@ -263,3 +263,30 @@ a:hover { text-decoration: underline; }
   .about-with-image { flex-direction: column; }
   .sci-side { max-width: 100%; }
 }
+
+/* --- Scientific images row under About --- */
+.sci-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.sci-row figure {
+  margin: 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+.sci-row img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.sci-row figcaption {
+  font-size: 13px;
+  padding: 6px;
+  color: var(--muted);
+}
